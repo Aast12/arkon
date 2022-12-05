@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  notebook:
+    build: .
+    platform: linux/amd64
+    restart: unless-stopped
+    working_dir: "/home/work"
+    ports:
+      - 10000:8888
+    volumes:
+      - .:/home/work:cached
